@@ -18,7 +18,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "swr": "^2.2.5"
+    "react-typewriter-effect": "^1.1.0",
+    "swr": "^2.2.5",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
