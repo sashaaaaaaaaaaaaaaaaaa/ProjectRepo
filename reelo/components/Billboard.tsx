@@ -1,7 +1,10 @@
 import React from "react";
 import useBillBoard from "@/hooks/useBillBoard";
-import { CiCircleInfo } from "react-icons/ci";
 import { CiPlay1 } from "react-icons/ci";
+import { RiInformationLine } from "react-icons/ri";
+import { RiHeartAdd2Line } from "react-icons/ri";
+import PlayButton from "@/components/playButton";
+
 
 const Billboard = () => {
     const {data} = useBillBoard();
@@ -11,21 +14,30 @@ const Billboard = () => {
                    autoPlay loop muted poster={data?.thumbnailUrl} src={data?.videoUrl}></video>
 
             <div className={"absolute top-[30%] md:top-[40%] ml-4 md:ml-16"}>
-                <p className={"text-white text-2xl md:text-6xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl"}>{data?.title}</p>
+
+
+                <p className="text-white text-2xl md:text-4xl lg:text-6xl font-bold w-full md:w-1/2 lg:w-1/2 mt-2 md:mt-0 lg:mt-0 drop-shadow-xl">
+                    {data?.title}
+                </p>
+
 
                 <p className={"text-white text-[8px] md:text-lg mt-4 md:mt8 w-[90%] md:w-[80%] lg:w-[50%] drop-shadow-xl"}>{data?.description}</p>
 
+
                 <div className={"flex flex-row items-center md-3 md:mt-4 gap-3"}>
+                    {/*<PlayButton movieId={data?.id}/>*/}
                     <button
-                        className={"bg-white text-black  rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-70 cursor-pointer transition"}>
-                        <CiPlay1 className={"mr-2"}/>
-                        Trailer
-                    </button>
+                        className="bg-white text-black rounded-full py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex items-center hover:bg-opacity-70 cursor-pointer transition mt-2 md:mt-0"
+                    >
+                        <RiHeartAdd2Line size={20} className="mr-2"/>Add</button>
                     <button
-                        className={"bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 cursor-pointer transition"}>
-                        <CiCircleInfo className={"mr-2"}/>
-                        More Info
+                        className="bg-white text-white bg-opacity-30 rounded-full py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex items-center hover:bg-opacity-20 cursor-pointer transition mt-2 md:mt-0 md:ml-2"
+                    >
+                        <RiInformationLine size={24} className="mr-2"/>
+                        See More
                     </button>
+
+
                 </div>
             </div>
         </div>
